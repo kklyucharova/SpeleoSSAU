@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="js/linescroll.js"></script>
 </head>
 <body class="main">
 <div id="header"></div>
@@ -51,5 +53,11 @@
     $('#footer').load('template/footer.html');
     $('#last_travel_note').load('template/last_travel_note.html');
 
+
+$.scrolline({
+    position : 'top',
+    frontColor : '#f1c40f',
+    weight : 9
+});
 </script>
 </html>
