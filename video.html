@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>О Клубе</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="main">
+<div id="header"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="news-title">Видео-материалы</div>
+    </div>
+    <div class="row">
+        <div id="menu" class="col-sm-2 col-sm-offset-1"></div>
+        <div class="video col-sm-6 ">
+            <div class="video-item container-fluid">
+                <p class="video-title">Провожали лето на байдарках</p>
+                <p class="video-caption"> Автор: Ксения Ключарова </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-eG4jhA9thQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item container-fluid">
+                <p class="video-title">Воспоминания о поездке в Сибирь</p>
+                <p class="video-caption"> Автор: Ксения Ключарова </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iqtHT1kMM4I" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-item container-fluid">
+                <p class="video-title">Поход в пещеру братьев Греве</p>
+                <p class="video-caption"> Автор: Алена Кибиткина</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3l8aD7Hmey0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="last-story col-sm-2">
+            <a class="last-story-title">Последние истории</a>
+            <a href="#" class="last-story-item">Урал - это не просто так</a>
+            <a href="#" class="last-story-item">Грандиозное безумие</a>
+            <a href="#" class="last-story-item">Не силясь преуспеть за скоротечной модой</a>
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+</body>
+<script>
+    $('#menu').load('template/menu.html', function () {
+        $('#video').addClass('active');
+    });
+    $('#header').load('template/header.html');
+    $('#footer').load('template/footer.html');
+
+</script>
+</html>

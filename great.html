@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>О Клубе</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body class="main">
+<div id="header"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div id="menu" class="col-sm-2 col-sm-offset-1"></div>
+        <div class="feed col-sm-6 ">
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="note-title" style="text-align:center;">Грандиозное безумие</p>
+                    <p class="feed-author" style="text-align:center;">Потапов Валентин</p>
+                </div>
+                <div class="row article">
+                    <p class="article-text"><b>Звонок с потолка</b></p>
+                        <p class="article-text">Все началось осенним днем, который не предвещал ничего особенного.
+                        Утреннее спокойствие сентябрьских дачных листьев было нарушено множеством нелепых телефонных звонков, ненужных будничных дел и тому подобной суеты, поэтому, когда в очередной раз зазвонил телефон, я, огорченный неразрывным кругом забот, даже не хотел брать трубку. Опять, думаю, проблемы и плохие новости, но ошибался.
+                        Звонил Артур из Салавата, звал в экспедицию в пещеру Грандиозная... Словно нашелся недостающий элемент в мозаике бытия – все встало на свои места, вырисовав четкую картинку. То, что нужно сейчас. Едем
+                    </p>
+                    <div class="row">
+                        <img src="img/ural1.png" class="col-sm-12">
+                    </div>
+                    <p class="article-text">
+                        <br> <br/></p>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <img src="img/ural2.png" class="col-sm-12">
+                        </div>
+                    </div>
+                    <p class="article-text">
+                        <br> <br/></p>
+                </div>
+            </div>
+        </div>
+        <div class="last col-sm-2" id="last_travel_note"></div>
+    </div>
+    <div id="footer"></div>
+</div>
+</body>
+<script>
+    $('#menu').load('template/menu.html', function () {
+        $('#travel_notes').addClass('active');
+    });
+    $('#header').load('template/header.html');
+    $('#footer').load('template/footer.html');
+    $('#last_travel_note').load('template/last_travel_note.html');
+
+</script>
+</html>

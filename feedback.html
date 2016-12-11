@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>О Клубе</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="main">
+<div id="header"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="news-title">Напишите нам письмо</div>
+    </div>
+    <div class="row">
+        <div id="menu" class="col-sm-2 col-sm-offset-1"></div>
+        <div class="feed col-sm-6 ">
+            <div class="feed-item container-fluid">
+                <div class="row article">
+                    <p class="article-text">Вы можете задать нам свой вопрос и мы свяжемся с вами.
+                        <br>Принимаются так же предложения о сотрудничестве.</br>
+                        <br>*Все поля обязательны для ввода</br></p>
+
+                    <form id="contact-form" class="article-text">
+                        <div class="from-group">
+                            <label for="name" class="control-label">Ваше имя:</label>
+                                <input data-validation="custom"
+                                       data-validation-regexp="^[^0-9]{4,16}$" type="text" class="form-control" id="name"
+                                       data-validation-error-msg="Имя может содержать только заглавные и строчные буквы (от 4 до 16 симвролов)">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email-адрес:</label>
+                            <input data-validation="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Телефон:</label>
+                            <input data-validation="custom"
+                                   data-validation-regexp="^[0-9]{10}$"
+                                   data-validation-error-msg="Введите телефон в формате <8461111111> (первые три цифры - код города)"
+                            class="form-control" id="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="link">Ссылка на личный сайт:</label>
+                            <input class="form-control" data-validation="url" id="link"
+                                   data-validation-error-msg="Неверный формат ссылки (пример: https://vk.com/ksenia_key)"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="text">Текст вашего сообщения:</label>
+                            <textarea type="text" data-validation="length" data-validation-length="min20" class="form-control" id="text">
+
+                            </textarea>
+                        </div>
+                        <button type="submit" class="btn btn-default" onclick="verification()">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="last col-sm-2" id="last_travel_note"></div>
+    </div>
+    <div id="footer"></div>
+</div>
+</body>
+<script>
+    $('#menu').load('template/menu.html', function () {
+        $('#feedback').addClass('active');
+    });
+    $('#header').load('template/header.html');
+    $('#footer').load('template/footer.html');
+    $('#last_travel_note').load('template/last_travel_note.html');
+
+
+
+    $.validate({
+        lang: 'ru',
+        modules : 'sweden ,html5'
+    });
+
+
+</script>
+</html>

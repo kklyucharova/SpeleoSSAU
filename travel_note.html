@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Главная</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body class="main">
+<div id="header"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="news-title">Наши истории</div>
+    </div>
+    <div class="row">
+        <div id="menu" class="col-sm-2 col-sm-offset-1"></div>
+        <div class="feed col-sm-6 ">
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">30.10.16</p>
+                    <a href="ural.html" class="col-sm-10 note-title">Урал - это не просто так</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Кибиткина Алена, пещера «Сумган»</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">27.09.16</p>
+                    <a href="#" class="col-sm-10 note-title">Грандиозное безумие</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Потапов Валентин, пещера «Грандиозная»</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">15.02.16</p>
+                    <a href="mainstream" class="col-sm-10 note-title">Не силясь преуспеть за скоротечной модой</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Потапов Валентин, Сибирь</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">10.02.16</p>
+                    <a href="mounts.html" class="col-sm-10 note-title">Там за горами на холмах</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Кренников Артем, Сибирь</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">09.02.16</p>
+                    <a href="iamspleolog.html" class="col-sm-10 note-title">Я - спелеолог!</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Нагуманов Максим, Сибирь</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">23.11.15</p>
+                    <a href="#" class="col-sm-10 note-title">Здравствуйте, я — пещера</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Кибиткина Алена, пещера «Октябрьская»</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">11.02.15</p>
+                    <a href="#" class="col-sm-10 note-title">Дорога стелет на север</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Альдебенева Екатерина, Архангельская обл., Пинега</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">23.11.14</p>
+                    <a href="#" class="col-sm-10 note-title">Бесконечность не предел</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Горячев Василий, озеро Баскунчак</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">29.07.14</p>
+                    <a href="#" class="col-sm-10 note-title">Локация «Арабика» </a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Валентин Потапов, горный массив Арабика</p>
+                </div>
+            </div>
+            
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <p class="col-sm-2 story-date">14.05.14</p>
+                    <a href="#" class="col-sm-10 note-title">«Пропащие» выходные</a>
+                    <p class="col-sm-offset-2 col-sm-10 feed-author">Артюкова Анастасия, пещера «Пропащая яма»</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="last col-sm-2" id="last_travel_note"></div>
+    </div>
+    <div id="footer"></div>
+</div>
+</body>
+<script>
+    $('#menu').load('template/menu.html', function () {
+        $('#travel_notes').addClass('active');
+    });
+    $('#header').load('template/header.html');
+    $('#footer').load('template/footer.html');
+    $('#last_travel_note').load('template/last_travel_note.html');
+</script>
+</html>
