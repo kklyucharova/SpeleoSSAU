@@ -8,13 +8,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body class="main">
 <div id="header"></div>
 <div class="container-fluid main">
     <div class="row">
         <div class="news-title">Новости сайта</div>
+        <div class="modal" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Добро пожаловать на сайт</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="intro-text">Сдесь вы можете ознакомится с материалами наших поездок. Или поделиться своей историей.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
     <div class="row">
         <div id="menu" class="col-sm-2 col-sm-offset-1"></div>
@@ -116,7 +134,7 @@
     $('#last_travel_note').load('template/last_travel_note.html');
 
     $(document).ready(function(){
-
+    $("#myModal").modal({show: true});
 	//Check to see if the window is top if not then display button
 	$(window).scroll(function(){
 		if ($(this).scrollTop() > 100) {
@@ -131,7 +149,6 @@
 		$('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
-
 });
 </script>
 </html>

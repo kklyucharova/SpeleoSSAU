@@ -104,6 +104,18 @@ ol.article-text li{
 	color: #4a4a4a;
 	margin-left: 10px;
 }
+.modal-title{
+font-family: AvenirNext;
+}
+
+.intro-text{
+	font-family: AvenirNext;
+	font-size: 20px;
+	font-style: normal;
+	font-stretch: normal;
+	text-align: left;
+	margin-left: 10px;
+}
 
 .last-story-item{
 	font-family: AvenirNext;
