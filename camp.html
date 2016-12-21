@@ -106,10 +106,37 @@
         </div>
         <div class="last col-sm-2" id="last_travel_note"></div>
     </div>
+    <a href="#" class="scrollToTop">Вверх</a>
     <div id="footer"></div>
 </div>
 </body>
+
 <script>
+    $('#menu').load('template/menu.html', function () {
+        $('#index').addClass('active');
+    });
+    $('#header').load('template/header.html');
+    $('#footer').load('template/footer.html');
+    $('#last_travel_note').load('template/last_travel_note.html');
+
+    $(document).ready(function(){
+
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollToTop').fadeIn();
+		} else {
+			$('.scrollToTop').fadeOut();
+		}
+	});
+
+	//Click event to scroll to top
+	$('.scrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+
+});
     $('#menu').load('template/menu.html', function () {
         $('#camp').addClass('active');
     });

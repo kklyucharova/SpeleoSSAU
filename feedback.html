@@ -26,35 +26,36 @@
                         <br>*Все поля обязательны для ввода</br></p>
 
                     <form id="contact-form" class="article-text">
-                        <div class="from-group">
-                            <label for="name" class="control-label">Ваше имя:</label>
-                                <input data-validation="custom"
-                                       data-validation-regexp="^[^0-9]{4,16}$" type="text" class="form-control" id="name"
-                                       data-validation-error-msg="Имя может содержать только заглавные и строчные буквы (от 4 до 16 симвролов)">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email-адрес:</label>
-                            <input data-validation="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="tel">Телефон:</label>
-                            <input data-validation="custom"
-                                   data-validation-regexp="^[0-9]{10}$"
-                                   data-validation-error-msg="Введите телефон в формате <8461111111> (первые три цифры - код города)"
-                            class="form-control" id="tel">
-                        </div>
-                        <div class="form-group">
-                            <label for="link">Ссылка на личный сайт:</label>
-                            <input class="form-control" data-validation="url" id="link"
-                                   data-validation-error-msg="Неверный формат ссылки (пример: https://vk.com/ksenia_key)"
-                            >
-                        </div>
-                        <div class="form-group">
-                            <label for="text">Текст вашего сообщения:</label>
-                            <textarea type="text" data-validation="length" data-validation-length="min20" class="form-control" id="text">
+                        <table border="0" width="100%" cellpadding="5">
+                            <tr>
+                                <th for="name" class="control-label" width="20%" >Ваше имя:</th>
+                                <td><input data-validation="custom"
+                                           data-validation-regexp="^[^0-9]{4,16}$" type="text" class="form-control" id="name"
+                                           data-validation-error-msg="Имя может содержать только заглавные и строчные буквы (от 4 до 16 симвролов)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th for="email" class="control-label">Email-адрес:</th>
+                                <td><input data-validation="email" class="form-control" id="email"></td>
+                            </tr>
+                            <tr>
+                                <th for="tel">Телефон:</th>
+                                <td><input data-validation="custom"
+                                           data-validation-regexp="^[0-9]{10}$"
+                                           data-validation-error-msg="Введите телефон в формате <8461111111> (первые три цифры - код города)"
+                                           class="form-control" id="tel"></td>
+                            </tr>
+                            <tr>
+                                <th for="link">Ссылка на личный сайт:</th>
+                                <td><input class="form-control" data-validation="url" id="link"
+                                           data-validation-error-msg="Неверный формат ссылки (пример: https://vk.com/ksenia_key)"></td>
+                            </tr>
+                            <tr>
+                                <th for="text">Текст вашего сообщения:</th>
+                                <td><textarea type="text" data-validation="length" data-validation-length="min20" class="form-control" id="text"></textarea></td>
+                            </tr>
+                        </table>
 
-                            </textarea>
-                        </div>
                         <button type="submit" class="btn btn-default" onclick="verification()">Отправить</button>
                     </form>
                 </div>

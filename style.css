@@ -19,6 +19,7 @@ font-weight: 600;
 src: local('Avenir Next Regular'), url('fonts/AvenirNext-DemiBold.woff') format('woff');
 }
 
+
 .header-bg{
 	height: 465px;
 	background-image: url("img/header.png");
@@ -162,7 +163,7 @@ font-family: AvenirNext;
 	color: #444;
 	text-decoration: none;
 	position:fixed;
-	top:75px;
+	top:375px;
 	right:40px;
 	display:none;
 	background: url('arrow_up.png') no-repeat 0px 20px;
