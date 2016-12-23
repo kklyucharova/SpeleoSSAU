@@ -27,7 +27,7 @@ src: local('Avenir Next Regular'), url('fonts/AvenirNext-DemiBold.woff') format(
     background-size: cover;
 }
 .form-control{
-padding-bottom:30px;
+    margin-bottom: 15px;
 }
 
 .main{
