@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>О Клубе</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="main">
+<div id="header"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="news-title">Напишите нам письмо</div>
+    </div>
+    <div class="row">
+        <div id="menu" class="col-sm-2 col-sm-offset-1"></div>
+        <div class="feed col-sm-6 ">
+            <div class="feed-item container-fluid">
+                <div class="row">
+                    <h1 class="note-title" style="text-align:center;">Последний отзыв</h1>
+                </div>
+                <div class="row article">
+                    <div class="article-text" id="content"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="last col-sm-2" id="last_travel_note"></div>
+    </div>
+    <div id="footer"></div>
+</div>
+</body>
+<script>
+    $('#menu').load('template/menu.html', function () {
+        $('#feedback').addClass('active');
+    });
+    $('#header').load('template/header.html');
+    $('#footer').load('template/footer.html');
+    $('#last_travel_note').load('template/last_travel_note.html');
+
+
+    $(document).ready(function () {
+        $.get("http://localhost:3001/feedback/last", function (data) {
+            $("#content").html(data.message);
+        });
+    });
+
+    $.validate({
+        lang: 'ru',
+        modules : 'sweden ,html5'
+    });
+
+
+</script>
+</html>
