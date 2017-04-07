@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <style>
-   p{
-    text-indent: 1.5em; /* Отступ первой строки */
-    <!--text-align: justify; /* Выравнивание по ширине */-->
-   }
-  </style>
+    p {
+        text-indent: 1.5em; /* Отступ первой строки */
+    <!-- text-align: justify; /* Выравнивание по ширине */
+    -->
+    }
+</style>
 
 <head>
     <title>О Клубе</title>
@@ -13,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
@@ -28,47 +29,8 @@
         <div id="menu" class="col-sm-2 col-sm-offset-1"></div>
         <div class="feed col-sm-6 ">
             <div class="feed-item container-fluid">
-                <div class="row article article-text">
-                    <p>Мы собираемся каждый четверг в 18:40 в комнате 205 корпус 16.</p>
+                <div id="article" class="row article article-text">
 
-                    <p>
-                        На собраниях обычно обсуждаем детали будущих поездок: куда едем, что берем, где встречаемся и
-                        так
-                        далее, либо идет лекция: полезная информация для туриста и спелеолога: что брать с собой в
-                        пещеру, как одеваться, как не заблудиться, как подниматься и спускаться по веревке, каким узлом
-                        можно привязывать веревку и т.д.
-                    </p>
-                    <p>
-                        Кроме собраний у нас есть походы и тренировки. Тренировки проходят по выходным. В теплое время
-                        года
-                        - на скалах, зимой - в спортзале. На тренировках мы учимся работать с веревкой (потому что в
-                        пещерах
-                        часто приходится спускаться в пропасти и т.д.
-                    </p>
-                    <p>
-                        Походы. Поскольку мы спелеологи, мы стараемся посещать пещеры. В первую очередь это пещеры нашей
-                        области. Например, пещера Братьев Греве, Серные рудники, Сокские штольни (протяженность которых
-                        составляет более 27 км) или пещера Серноводская.
-                    </p>
-                    <div class="container-fluid">
-                        <div class="row image-container">
-                            <img src="assets/img/about/04small.jpg" class="col-sm-4">
-                            <img src="assets/img/about/05small.jpg" class="col-sm-4">
-                            <img src="assets/img/about/06small.jpg" class="col-sm-4">
-                        </div>
-                    </div>
-
-                    <p>
-                        Ну и многое другое, всего и не перечислить...
-                    </p>
-
-                    <div class="container-fluid">
-                        <div class="row image-container">
-                            <img src="assets/img/about/07small.jpg" class="col-sm-4">
-                            <img src="assets/img/about/08small.jpg" class="col-sm-4">
-                            <img src="assets/img/about/09small.jpg" class="col-sm-4">
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -85,13 +47,11 @@
     $('#footer').load('template/footer.html');
     $('#last_travel_note').load('template/last_travel_note.html');
 
-    $(document).ready(function() {
-        $("#owl-example").owlCarousel({
-        autoPlay: 3000,
-         items : 4
-         });
+    $(document).ready(function () {
+        $.get("http://localhost:3001/articles/about", function (data) {
+            $("#article").html(data.text);
+        });
     });
-
 
 
 </script>
