@@ -34,6 +34,7 @@
                         </thead>
                     </table>
                     <button class="btn" id="delete" onclick="deleteLast()"> Удалить последний отзыв</button>
+                    <button class="btn" id="find" onclick="findMegafon()"> Показать абонентов Мегафон(927)</button>
                 </div>
             </div>
         </div>
@@ -43,6 +44,7 @@
 </div>
 </body>
 <script>
+    var table
     $('#menu').load('template/menu.html', function () {
         $('#last_feedback').addClass('active');
     });
@@ -51,7 +53,7 @@
     $('#last_travel_note').load('template/last_travel_note.html');
     $(document).ready(function () {
         $(document).ready(function() {
-            $('#example').DataTable( {
+           table = $('#example').DataTable( {
                 "ajax":{
                  "url": "http://localhost:3001/feedback",
                 "dataSrc": ""
@@ -78,6 +80,10 @@
             }
         });
     };
+
+    function findMegafon(){
+     table.ajax.url("http://localhost:3001/feedback/megafon").load();
+     }
     $.validate({
         lang: 'ru',
         modules : 'sweden ,html5'
