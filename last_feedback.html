@@ -25,7 +25,7 @@
                 </div>
                 <div class="row article">
                     <div class="article-text" id="content"></div>
-
+                    <button class="btn" id="delete" onclick="deleteLast()"> Удалить последний отзыв</button>
                 </div>
             </div>
         </div>
@@ -44,15 +44,41 @@
 
 
     $(document).ready(function () {
-        $.get("http://localhost:3001/feedback/last", function (data) {
-            $("#content").html(data.message);
+        let url = "http://localhost:3001/feedback/last"
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function(data)
+            {
+               $("#content").html(data.message);
+            },
+            error: function(xhr, status, error)
+            {
+                $("#content").html("Отзывы отсутсвуют");
+            }
         });
     });
+
+    function deleteLast() {
+
+        let url = "http://localhost:3001/feedback/last"; // the script where you handle the form input.
+
+        $.ajax({
+            type: "DELETE",
+            url: url,
+            success: function(data)
+            {
+                window.location.href = "last_feedback.html"; // show response from the php script.
+            }
+        });
+
+    };
 
     $.validate({
         lang: 'ru',
         modules : 'sweden ,html5'
     });
+
 
 
 </script>
