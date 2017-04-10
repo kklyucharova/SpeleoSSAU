@@ -302,3 +302,47 @@ font-family: AvenirNext;
 	font-stretch: normal;
 	color: #7d7d7d;
 }
+
+.btn{
+    color: #ffffff;
+    margin-left:30px;
+    background-color: #ef6237;:
+}
+
+.link-title{
+    text-decoration:underline
+    font-family: AvenirNext;
+	font-size: 22px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	color: #ef6237;
+}
+
+.display{
+    font-family: AvenirNext;
+	font-size: 15px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	text-align: left;
+	color: #8c8c8c;
+	position: relative;
+	display: block;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 21px;
+    margin-bottom: 21px;
+}
+.comment-title{
+    margin-left: 20px;
+    margin-top: 21px;
+    margin-bottom: 21px
+}
+
+.table{
+   // border: 4px double #333; /* Рамка вокруг таблицы */
+    border-collapse: separate; /* Способ отображения границы */
+    width: 100%; /* Ширина таблицы */
+    border-spacing: 7px 11px; /* Расстояние между ячейками */
+}

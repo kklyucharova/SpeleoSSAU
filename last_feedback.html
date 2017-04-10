@@ -15,21 +15,21 @@
 <div id="header"></div>
 <div class="container-fluid main">
     <div class="row">
-        <div class="news-title">Напишите нам письмо</div>
+        <div class="news-title">Отзывы посетителей</div>
     </div>
     <div class="row">
         <div id="menu" class="col-sm-2 col-sm-offset-1"></div>
         <div class="feed col-sm-6 ">
             <div class="feed-item container-fluid">
                 <div class="row">
-                    <h1 class="note-title" style="text-align:center;">Последний отзыв</h1>
+                    <h1 class="note-title " style="text-align:center;">Вы можете оставить свой отзыв <a href="feedback.html" id="feedback" class="link-title">здесь</a></h1>
                 </div>
-                <div class="row article">
-                    <table id="example" class="display" cellspacing="0" width="100%">
+                <div class="row article col-sm-12">
+                    <table id="example" class="last_feedback display table" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Message</th>
+                            <th class="comment-title">Пользователь </th>
+                            <th class="comment-title">  Отзыв</th>
                         </tr>
                         </thead>
                     </table>
@@ -44,13 +44,11 @@
 </body>
 <script>
     $('#menu').load('template/menu.html', function () {
-        $('#feedback').addClass('active');
+        $('#last_feedback').addClass('active');
     });
     $('#header').load('template/header.html');
     $('#footer').load('template/footer.html');
     $('#last_travel_note').load('template/last_travel_note.html');
-
-
     $(document).ready(function () {
         $(document).ready(function() {
             $('#example').DataTable( {
@@ -64,16 +62,13 @@
                   ],
                   "paging":   false,
         "ordering": false,
-        "info":     false
-
+        "info":     false,
+        "searching": false
             } );
         });
     });
-
     function deleteLast() {
-
         let url = "http://localhost:3001/feedback/last"; // the script where you handle the form input.
-
         $.ajax({
             type: "DELETE",
             url: url,
@@ -82,18 +77,17 @@
                 window.location.href = "last_feedback.html"; // show response from the php script.
             }
         });
-
     };
-
     $.validate({
         lang: 'ru',
         modules : 'sweden ,html5'
     });
-
-
-
-
-
-
 </script>
 </html>
+
+<!--<div class="row">-->
+    <!--<<!--</div>-->
+<!--<div class="row article">-->
+    <!--<div class="article-text" id="content"></div>-->
+    <!--<button class="btn" id="delete" onclick="deleteLast()"> Удалить отзыв</button>-->
+<!--</div>-->
