@@ -9,6 +9,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 </head>
 <body class="main">
 <div id="header"></div>
@@ -24,7 +25,14 @@
                     <h1 class="note-title" style="text-align:center;">Последний отзыв</h1>
                 </div>
                 <div class="row article">
-                    <div class="article-text" id="content"></div>
+                    <table id="example" class="display" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Message</th>
+                        </tr>
+                        </thead>
+                    </table>
                     <button class="btn" id="delete" onclick="deleteLast()"> Удалить последний отзыв</button>
                 </div>
             </div>
@@ -44,18 +52,21 @@
 
 
     $(document).ready(function () {
-        let url = "http://localhost:3001/feedback/last"
-        $.ajax({
-            type: "GET",
-            url: url,
-            success: function(data)
-            {
-               $("#content").html(data.message);
-            },
-            error: function(xhr, status, error)
-            {
-                $("#content").html("Отзывы отсутсвуют");
-            }
+        $(document).ready(function() {
+            $('#example').DataTable( {
+                "ajax":{
+                 "url": "http://localhost:3001/feedback",
+                "dataSrc": ""
+                 },
+                 "columns": [
+                    { "data": "name" },
+                    { "data":"message" },
+                  ],
+                  "paging":   false,
+        "ordering": false,
+        "info":     false
+
+            } );
         });
     });
 
@@ -78,6 +89,9 @@
         lang: 'ru',
         modules : 'sweden ,html5'
     });
+
+
+
 
 
 
