@@ -22,19 +22,26 @@
         <div class="feed col-sm-6 ">
             <div class="feed-item container-fluid">
                 <div class="row">
-                    <h1 class="note-title " style="text-align:center;">Вы можете оставить свой отзыв <a href="feedback.html" id="feedback" class="link-title">здесь</a></h1>
+                    <h1 class="note-title " style="text-align:center;">Вы можете оставить свой отзыв <a
+                            href="feedback.html" id="feedback" class="link-title">здесь</a></h1>
                 </div>
                 <div class="row article col-sm-12">
                     <table id="example" class="last_feedback display table" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th class="comment-title">Пользователь </th>
-                            <th class="comment-title">  Отзыв</th>
+                            <th class="comment-title">Пользователь</th>
+                            <th class="comment-title"> Отзыв</th>
                         </tr>
                         </thead>
                     </table>
                     <button class="btn" id="delete" onclick="deleteLast()"> Удалить последний отзыв</button>
                     <button class="btn" id="find" onclick="findMegafon()"> Показать абонентов Мегафон(927)</button>
+                    <form id="find-form" class="form-inline" style="margin-left: 30px!important;">
+                        <div class="form-group">
+                            <input class="form-control" id="name" type="text" name="name">
+                            <button class="btn btn-find">Поиск по имени</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -52,21 +59,21 @@
     $('#footer').load('template/footer.html');
     $('#last_travel_note').load('template/last_travel_note.html');
     $(document).ready(function () {
-        $(document).ready(function() {
-           table = $('#example').DataTable( {
-                "ajax":{
-                 "url": "http://localhost:3001/feedback",
-                "dataSrc": ""
-                 },
-                 "columns": [
-                    { "data": "name" },
-                    { "data":"message" },
-                  ],
-                  "paging":   false,
-        "ordering": false,
-        "info":     false,
-        "searching": false
-            } );
+        $(document).ready(function () {
+            table = $('#example').DataTable({
+                "ajax": {
+                    "url": "http://localhost:3001/feedback",
+                    "dataSrc": ""
+                },
+                "columns": [
+                    {"data": "name"},
+                    {"data": "message"},
+                ],
+                "paging": false,
+                "ordering": false,
+                "info": false,
+                "searching": false
+            });
         });
     });
     function deleteLast() {
@@ -74,26 +81,35 @@
         $.ajax({
             type: "DELETE",
             url: url,
-            success: function(data)
-            {
+            success: function (data) {
                 window.location.href = "last_feedback.html"; // show response from the php script.
             }
         });
     };
 
-    function findMegafon(){
-     table.ajax.url("http://localhost:3001/feedback/megafon").load();
-     }
+    function findMegafon() {
+        table.ajax.url("http://localhost:3001/feedback/megafon").load();
+    }
+
+    $("#find-form").submit(function(e) {
+        table.ajax.url("http://localhost:3001/feedback/name?name="+e.target.name.value).load();
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
+
+    function findByName(e){
+        e.preventDefault();
+        table.ajax.url("http://localhost:3001/feedback/name?name="+e.target.name.value).load();
+    }
     $.validate({
         lang: 'ru',
-        modules : 'sweden ,html5'
+        modules: 'sweden ,html5'
     });
 </script>
 </html>
 
 <!--<div class="row">-->
-    <!--<<!--</div>-->
+<!--<<!--</div>-->
 <!--<div class="row article">-->
-    <!--<div class="article-text" id="content"></div>-->
-    <!--<button class="btn" id="delete" onclick="deleteLast()"> Удалить отзыв</button>-->
+<!--<div class="article-text" id="content"></div>-->
+<!--<button class="btn" id="delete" onclick="deleteLast()"> Удалить отзыв</button>-->
 <!--</div>-->
